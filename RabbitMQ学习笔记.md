@@ -227,7 +227,7 @@ RabbitMQ效果：
 ![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/RabbitMQ1_4.PNG)  
 
 
-![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/RabbitMQ1_5.PNG)  
+![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/Rabbit1_5.PNG)  
 
 
 
