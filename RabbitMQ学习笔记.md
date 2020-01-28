@@ -137,7 +137,7 @@ public static Connection getConnection(String host,int port,String vHost,String 
 一个生产者对应一个消费者  
 
 
-![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/RabbitMQ1.PNG)  
+![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/RabbitMQ1.png)  
 
 生产者将消息发送到“hello”队列，消费者从该队列接收消息
 
@@ -236,7 +236,7 @@ RabbitMQ效果：
 竞争消费者模式，一个生产者对应多个消费者，但是只能有一个消费者获得消息  
 
 
-![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/RabbitMQ2_2.PNG)  
+![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/RabbitMQ2_2.png)  
 
 - 生产者
 
@@ -366,12 +366,12 @@ public class Consumer2 {
 **消费者1：打印偶数条消息**  
 
 
-![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/RabbitMQ2_3.PNG)  
+![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/RabbitMQ2_3.png)  
 
 **消费者2：打印奇数条消息**  
 
 
-![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/RabbitMQ2_4.PNG)  
+![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/RabbitMQ2_4.png)  
 
 🔺同一个消息只能被一个消费者获取，两个消费者获取消息的条数一样。
 
@@ -386,10 +386,10 @@ channel.basicQos(1)
 此时，消费者1和消费者2获取消息结果如图：  
 
 
-![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/RabbitMQ2_5.PNG)  
+![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/RabbitMQ2_5.png)  
 
 
-![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/RabbitMQ2_6.PNG)  
+![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/RabbitMQ2_6.png)  
 
 **⭐应用场景：效率高的消费者消费消息多，用来负载均衡**
 
@@ -400,7 +400,7 @@ channel.basicQos(1)
 一个消费者将消息首先发送到交换器，交换器绑定到多个队列，然后被监听该队列的消费者所接收并消费  
 
 
-![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/RabbitMQ3.PNG)  
+![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/RabbitMQ3.png)  
 
 X表示交换器，交换器主要有四种类型：direct、fanout、topic、headers，此处是fanout  
 
@@ -550,7 +550,7 @@ public class Consumer2 {
 #### 4.4 路由模式  
 
 
-![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/RabbitMQ4.PNG)
+![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/RabbitMQ4.png)
 
 生产者将消息发送到direct交换器，在绑定队列和交换器时有一个路由key，生产者发送的消息会指定一个路由key，那么消息只会发送到相应key相同的队列，接着监听该队列的消费者消费消息。 **让消费者有选择性地接收消息**
 
@@ -849,28 +849,28 @@ public class Consumer2 {
 如果路由键完全匹配，消息才会被投放到相应队列  
 
 
-![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/direct.PNG)  
+![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/direct.png)  
 
 ②fanout
 
 当发送一条消息到fanout交换器上，它会把消息投放到所有附加在此交换器上的队列  
 
 
-![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/fanout.PNG)  
+![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/fanout.png)  
 
 ③topic
 
 设置模糊的绑定方式，“*”操作符将“."视为分隔符，匹配单个字符；"#"操作符没有分块的概念，它将任意“.”均视为关键字的匹配部分，能够匹配多个字符
 
 
-![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/topic.PNG)  
+![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/topic.png)  
 
 
 
 ### 6. 有交换器参与的队列中生产者和消费者的小结  
 
 
-![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/Producer_Consumer.PNG)  
+![Image text](https://github.com/Pangxiaox/RabbitMQ_Learning/blob/master/MQ-pic/Producer_Consumer.png)  
 
 
 
